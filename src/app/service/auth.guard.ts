@@ -1,3 +1,4 @@
+
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -10,7 +11,7 @@ import { POSOneEnum } from '../enumerator/posone.enum';
 @Injectable({
     providedIn: 'root'
 })
-export class AuthGurd implements CanActivate {
+export class AuthGuard implements CanActivate {
 
     protected path: string;
 
@@ -19,6 +20,7 @@ export class AuthGurd implements CanActivate {
     }
 
     public canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+        // tslint:disable-next-line:no-unused-expression
         !isNullOrUndefined(router.params[POSOneEnum.REDIRECT_BY_GUID]) ? this.service.postOauthToken().subscribe(response => { }) : null;
         return router.url[0].path === this.path ? of(true) : this.navigateByUrl();
     }

@@ -24,7 +24,7 @@ import { CardDataComponent } from './card-data/card-data.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
-import { AuthGurd } from './service/auth.guard';
+import { AuthGuard } from './service/auth.guard';
 
 export const routes: Routes = [
     { path: '', component: LandingComponent },
@@ -33,14 +33,14 @@ export const routes: Routes = [
         children: [
             { path: 'access-denied', component: AccessDeniedComponent },
             { path: 'signup', component: SignupComponent, pathMatch: 'full' },
-            { path: 'redirect/:guId', component: SignupComponent, canActivate: [AuthGurd] },
-            { path: 'register', component: RegisterComponent, canActivate: [AuthGurd] },
-            { path: 'buy', component: BuyComponent, canActivate: [AuthGurd] },
-            { path: 'machine', component: MachineComponent, canActivate: [AuthGurd] },
-            { path: 'card-data', component: CardDataComponent, canActivate: [AuthGurd] },
+            { path: 'redirect/:guId', component: SignupComponent, canActivate: [AuthGuard] },
+            { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+            { path: 'buy', component: BuyComponent, canActivate: [AuthGuard] },
+            { path: 'machine', component: MachineComponent, canActivate: [AuthGuard] },
+            { path: 'card-data', component: CardDataComponent, canActivate: [AuthGuard] },
             // { path: 'card-data', component: CardDataComponent },
-            { path: 'receipt/:type', component: ReceiptComponent, canActivate: [AuthGurd] },
-            { path: 'payment', component: PaymentComponent, canActivate: [AuthGurd] },
+            { path: 'receipt/:type', component: ReceiptComponent, canActivate: [AuthGuard] },
+            { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
         ]
     },
     { path: 'home', component: LandingComponent },

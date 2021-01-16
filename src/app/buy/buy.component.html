@@ -1,0 +1,84 @@
+<div class="ui-fluid">
+
+    <form [formGroup]="form" class="ui-g ui-fluid">
+
+        <div class="ui-g-12">
+            <div class="card card-w-title box">
+                <div class="lm-title-card">
+                    <h1>Licenças</h1>
+                </div>
+
+                <div class="ui-g form-group">
+                    <div class="ui-g-12">
+                        <label [innerHTML]="'Por favor escolha o plano e a quantidade de licenças/usuários:'"></label>
+                    </div>
+                    <div class="ui-g-6">
+                        <p-dropdown [options]="listLicense" formControlName="license" placeholder="" optionLabel="quantity" [showClear]="false"></p-dropdown>
+                    </div>
+                </div>
+
+                <h3>Planos</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th [innerHTML]="'Planos'"></th>
+                            <th [innerHTML]="planName1"></th>
+                            <th [innerHTML]="planName2"></th>
+                            <th [innerHTML]="planName3"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label [innerHTML]="planBenefit1"></label></td>
+                            <td><label [innerHTML]="'X'" style="color:red"></label></td>
+                            <td><label [innerHTML]="'X'" style="color:red"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label [innerHTML]="planBenefit2"></label></td>
+                            <td><label [innerHTML]="'X'" style="color:red"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label [innerHTML]="planBenefit3"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label [innerHTML]="'Período (12 meses)'"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                            <td><label [innerHTML]="'✓'" style="color:#9fd037"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label [innerHTML]="'Valor'"></label></td>
+                            <td><label [innerHTML]="planPrice1 | currencyCuston : 'R$'"></label> /Mês</td>
+                            <td><label [innerHTML]="planPrice2 | currencyCuston : 'R$'"></label> /Mês</td>
+                            <td><label [innerHTML]="planPrice3 | currencyCuston : 'R$'"></label> /Mês</td>
+                        </tr>
+                        <tr>
+                            <td><label [innerHTML]="'Escolha'"></label></td>
+                            <td>
+                                <p-radioButton name="group1" value="BASICO" label="" formControlName="model" inputId="opt1"></p-radioButton>
+                            </td>
+                            <td>
+                                <p-radioButton name="group1" value="INTERMEDIARIO" label="" formControlName="model" inputId="opt2"></p-radioButton>
+                            </td>
+                            <td>
+                                <p-radioButton name="group1" value="PRO" label="" formControlName="model" inputId="opt3"></p-radioButton>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="btn" class="ui-grid box">
+                <button pButton type="button" label="Voltar" class="ui-button-secondary raised-btn" (click)="onReceipt(form, 'register')"></button>
+                <button pButton type="button" label="Continuar" class="raised-btn" [disabled]="form.invalid" (click)="onReceiptNext(form, 'machine')"></button>
+            </div>
+        </div>
+    </form>
+</div>

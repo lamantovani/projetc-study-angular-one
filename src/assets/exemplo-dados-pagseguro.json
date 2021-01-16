@@ -1,0 +1,47 @@
+{
+      "plan": "095E97AC9E9E80044418AF922EEE3D1D",
+      "reference": "plano1",
+      "sender": {
+        "name": "Filipe Carmona",
+        "email": "adesao@sandbox.pagseguro.com.br",
+        "ip": "189.78.35.93",
+        "phone": {
+          "areaCode": "11",
+          "number": "999999999"
+        },
+        "address": {
+        	"postalCode": "11020002",
+        	"street": "Av. Afonso Pena",
+        	"number": "150",
+        	"district": "Boqueirão",
+        	"complement": "2",
+        	"city": "Santos",
+        	"state": "SP",
+        	"country": "BRA"
+        },
+        "documents": [{
+          "type": "CNPJ",
+          "value": "29306232000154"
+        }]
+      },
+      "paymentMethod": {
+        "type": "CREDITCARD",
+        "creditCard": {
+          "token": "dd35995d0f554cfc8b64e0625fc08a8e",
+          "holder": {
+            "name": "Filipe Carmona",
+            "birthDate": "17/07/1992",
+            "documents": [
+            	{
+            		"type": "CPF",
+            		"value": "37767559890"
+            	}
+            ],
+	        "phone": {
+	          "areaCode": "11",
+	          "number": "999999999"
+	        }
+          }
+        }
+      }
+    }

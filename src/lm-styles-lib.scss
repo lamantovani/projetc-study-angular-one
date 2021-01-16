@@ -1,0 +1,73 @@
+$layout-module-size: 30px;
+$directions: top, right, bottom, left;
+
+%u-bold { font-variant: bold; }
+%u-no-bold { font-variant: normal; }
+%u-italic { font-style: italic; }
+%u-no-italic { font-style: nomal; }
+
+%u-text-align-center { text-align: center; }
+%u-text-align-left { text-align: left; }
+%u-text-aling-right { text-align: right; }
+%u-text-aling-justify { text-align: justify; }
+
+%u-underline { text-decoration: underline; }
+%u-strike { text-decoration: line-through; }
+%u-no-text-decoration { text-decoration: none; }
+
+%u-uppercase { text-transform: uppercase; }
+%u-capitalize { text-transform: capitalize; }
+%u-no-text-decoration { text-transform: none; }
+
+%u-position-absolute { position: absolute; }
+%u-position-relative { position: relative; }
+%u-position-fixed { position: fixed; }
+%u-position-static { position: static; }
+
+%u-no-padding { padding: 0; }
+%u-no-margin { margin: 0; }
+
+@each $direction in $directions {
+    %u-no-padding-#{$direction} { padding-#{$direction}: 0; }
+    %u-half-padding-#{$direction} { padding-#{$direction}: $layout-module-size / 2; }
+    %u-default-padding-#{$direction} { padding-#{$direction}: $layout-module-size; }
+    %u-double-padding-#{$direction} { padding-#{$direction}: $layout-module-size * 2; }
+
+    %u-no-margin-#{$direction} { padding-#{$direction}: 0; }
+    %u-half-margin-#{$direction} { margin-#{$direction}: $layout-module-size / 2; }
+    %u-default-margin-#{$direction} { margin-#{$direction}: $layout-module-size; }
+    %u-double-margin-#{$direction} { margin-#{$direction}: $layout-module-size * 2; }
+}
+
+%u-display-flex { display: flex; }
+%u-display-bloc { display: block; }
+%u-display-none { display: none; }
+
+%u-flex-direction-row { flex-direction: row; }
+%u-flex-direction-column { flex-direction: column; }
+
+%u-flex-wrap-wrap { flex-wrap: wrap; }
+%u-flex-wrap-wrap-reverse { flex-wrap: wrap-reverse; }
+%u-flex-wrap-nowrap { flex-wrap: nowrap; }
+
+%u-flex-align-items-center { align-items: center; }
+%u-flex-align-items-flex-start { align-items: flex-start; }
+%u-flex-align-items-flex-end { align-items: flex-end; }
+%u-flex-align-items-strech { align-items: stretch; }
+%u-flex-align-items-baseline { align-items: baseline; }
+
+%u-flex-justify-content-center { justify-content: center; }
+%u-flex-justify-content-flex-start { justify-content: flex-start; }
+%u-flex-justify-content-flex-end { justify-content: flex-end; }
+%u-flex-justify-content-arapund { justify-content: space-around; }
+%u-flex-justify-content-between { justify-content: space-between; }
+
+%u-flex-total-centered { @extend %u-flex-align-items-center, %u-flex-justify-content-center; }
+
+%u-back-ground-color-title {
+    background-color: #f0f3f5;
+}
+
+%u-button-position-right {
+    float: right;
+}

@@ -1,0 +1,39 @@
+<div class="ui-fluid">
+
+    <div class="card card-w-title box">
+        <div class="lm-title-card">
+            <h1>{{title}}</h1>
+        </div>
+
+        <div class="ui-grid">
+            <div class="ui-grid-col-12">
+                <p-messages [value]="msgs"></p-messages>
+            </div>
+        </div>
+
+        <div class="ui-g form-group">
+            <div class="ui-grid">
+                <div class="ui-grid-col-12">
+                    <h2 [innerHTML]="textBody1"></h2>
+                </div>
+                <div class="ui-grid-col-12">
+                    <h3 [innerHTML]="textBody2"></h3>
+                    <span *ngIf="type === 'success'"><b><h3 [innerHTML]="'E-mail: ' + contractDTOModel.clientData.email"></h3></b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="btn" class="card card-w-title box">
+        <div class="ui-g form-group">
+            <div class="ui-g-8" *ngIf="type === 'error'"></div>
+            <div class="ui-g-10" *ngIf="type === 'success'"></div>
+            <div class="ui-g-2">
+                <button pButton type="button" label="Home" class="raised-btn" (click)="navigateByUrl('home')"></button>
+            </div>
+            <div class="ui-g-2" *ngIf="type === 'error'">
+                <button pButton type="button" label="Tentar Novamente" class="raised-btn" (click)="navigateByUrl('card-data')"></button>
+            </div>
+        </div>
+    </div>
+</div>

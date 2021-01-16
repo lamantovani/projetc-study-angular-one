@@ -1,0 +1,77 @@
+<div class="topbar">
+    <div class="topbar-main">
+      <a href="#" id="menu-button" (click)="app.onMenuButtonClick($event)">
+        <span class="fa fa-bars"></span>
+      </a>
+      <a href="/">
+        <img alt="main logo" src="./../../assets/layout/images/logo-pos-one.jpeg" class="logo">
+      </a>
+      <div class="app-name">POS One</div>
+      
+      <a href="#" id="user-display" (click)="app.onTopbarMenuButtonClick($event)">
+        <span class="username">Nome de Usuario</span>
+        <span class="userrole">Tipo</span>
+        <img alt="main logo" src="assets/layout/images/avatar.png">
+      </a>
+      
+      <ul id="topbar-menu" class="fadeInDown animated" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}">
+        <!-- <li class="search-item">
+          <div>
+            <input type="text" pInputText placeholder="Search" />
+            <span class="fa fa-search"></span>
+          </div>
+        </li> -->
+        <!-- <li #perfil>
+          <a href="#" (click)="app.onTopbarItemClick($event)">
+            <i class="topbar-icon fa fa-fw fa-user"></i>
+            <span class="topbar-item-name">Perfil</span>
+          </a>
+        </li>
+        <li #pagamentos>
+          <a href="#" (click)="app.onTopbarItemClick($event)">
+            <i class="topbar-icon fa fa-fw fa-money-check"></i>
+            <span class="topbar-item-name">Pagamentos</span>
+          </a>
+          <ul>
+            <li role="menuitem">
+              <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                <i class="fa fa-fw fa-paint-brush"></i>
+                <span>Change Theme</span>
+                <span class="topbar-submenuitem-badge">4</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                <i class="fa fa-fw fa-star-o"></i>
+                <span>Favorites</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                <i class="fa fa-fw fa-lock"></i>
+                <span>Lock Screen</span>
+                <span class="topbar-submenuitem-badge">2</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                <i class="fa fa-fw fa-picture-o"></i>
+                <span>Wallpaper</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li #sair>
+          <a href="#" (click)="app.onTopbarItemClick($event)">
+            <i class="topbar-icon material-icons animated swing fa fa-fw fa-sign-out"></i>
+            <span class="topbar-item-name">Sair</span>
+            <span class="topbar-badge animated rubberBand">4</span>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+    
+    <app-menu [reset]="app.resetMenu"></app-menu>
+    
+  </div>
+  

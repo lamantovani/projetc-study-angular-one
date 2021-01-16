@@ -1,0 +1,46 @@
+<div id="header">
+    <div class="header-top">
+        <img alt="logo" src="assets/layout/images/logo-pos-one.jpeg" class="logo" />
+
+        <a id="menu-button" href="#">
+            <img src="assets/layout/images/icon-menu.svg" alt="Menu" />
+        </a>
+
+        <ul id="landing-menu" class="animated fadeInDown">
+            <!-- <li>
+        <a href="#home">HOME</a>
+      </li> -->
+            <li>
+                <a href="#features">FUNCIONALIDADES</a>
+            </li>
+            <li>
+                <a href="#statistics">ESTATÍSTICAS</a>
+            </li>
+            <li>
+                <a href="#pricing">PLANOS</a>
+            </li>
+            <li>
+                <a href="#video">VIDEO</a>
+            </li>
+            <li>
+                <a (click)="navigateByUrl('signup')">CADASTRO</a>
+                <a (click)="navigateByUrl('redirect', '1632c5cc-4709-4d8a-84ac-d4c627b6ec7f')">CADASTRO_REDIRECT</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="header-content">
+        <h1>Chamada Principal</h1>
+        <h2>por que comprar o POS One</h2>
+        <div>
+            <a routerLink="/signup">
+        Cadastre-se já
+      </a>
+        </div>
+        <div class="introduction-image">
+            <img src="assets/layout/images/landing/verona.png" alt="verona" />
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,16 @@
+{
+    "identity": "42296113000126",
+    "email": "contato@gingaone.com",
+    "address": {
+        "complement": "10 andar",
+        "city": "São Paulo",
+        "state": "SP",
+        "postal_code": "04571000",
+        "street_name": "Avenida Berrini",
+        "street_number": "1700"
+    },
+    "company_name": "Gignaone Teste",
+    "trading_name": "Gignaone Teste",
+    "phone_number": "1136642772",
+    "responsible_name": "Responsavel Gingaone"
+}

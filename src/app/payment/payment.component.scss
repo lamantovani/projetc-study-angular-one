@@ -1,0 +1,105 @@
+%u-back-ground-color-title {
+    background-color: #f0f3f5;
+}
+
+@mixin center() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    @include center();
+    max-width: 80%;
+    margin-top: 20px;
+    .ui-grid-col-12 {
+        .line-price {
+            border: solid 0.5px #333;
+        }
+        .ui-grid-col-6 {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .ui-grid-col-6:nth-child(2) {
+            text-transform: uppercase;
+        }
+        .ui-grid-col-6:last-child {
+            text-align: end;
+        }
+    }
+}
+
+#btn.box {
+    margin-bottom: 60px;
+    padding: 0;
+    background-color: #eaeff2;
+}
+
+.lm-title-card {
+    h1 {
+        font-weight: 0;
+        text-transform: uppercase;
+    }
+    height: 20px;
+    padding: 20px;
+    margin-top: -16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: 10px;
+    @extend %u-back-ground-color-title;
+    border-bottom: 1px solid #e7e9f1;
+}
+
+.form-group {
+    .ui-grid {
+        width: 100%;
+    }
+    .ui-grid:nth-child(1) {
+        [class*="ui-grid-col-"] {
+            min-height: 123px;
+            span {
+                img {
+                    width: 58px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .ui-grid:nth-child(2) {
+        [class*="ui-grid-col-"] {
+            min-height: 123px;
+            span {
+                img {
+                    width: 60px;
+                }
+            }
+        }
+    }
+    .ui-grid:nth-child(3) {
+        [class*="ui-grid-col-"] {
+            min-height: 123px;
+            span {
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+    [class*="ui-grid-col-"] {
+        display: grid;
+        text-align: center;
+        border-bottom: solid 1px #eaeff2;
+        label {
+            top: 50px;
+            position: relative;
+        }
+    }
+    button {
+        width: 100%;
+        height: 35px;
+    }
+}
+
+.container {
+    margin-top: 100px;
+}

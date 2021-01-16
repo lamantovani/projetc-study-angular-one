@@ -1,0 +1,56 @@
+<div class="card card-w-title box">
+    <div class="lm-title-card">
+        <h1>Maquininha</h1>
+    </div>
+
+    <form [formGroup]="form">
+        <div class="ui-g form-group">
+            <div class="ui-grid">
+                <div class="ui-grid-col-5">
+                    <span><img id="machine" src="../../assets/moderninha-smart.png"></span>
+                    <span><img id="name-machine" src="../../assets/nome-moderninha-smart.png"></span>
+                </div>
+                <div class="ui-grid-col-5">
+                    <h4>Quantidade</h4>
+                    <p-dropdown [options]="smarts" formControlName="smart" optionLabel="label" [showClear]="false"></p-dropdown>
+                    <div class="ui-grid-col-6">
+                        <label [innerHTML]="'A maquininha será entregue com o chip da operadora com melhor sinal para sua região'"></label>
+                    </div>
+                </div>
+                <div class="ui-grid-col-2">
+                    <label [innerHTML]="priceMachineX | currencyCuston : 'R$'"></label>/Mês
+                </div>
+            </div>
+
+            <div class="ui-grid-col-12"></div>
+
+            <div class="ui-grid">
+                <div class="ui-grid-col-5">
+                    <span><img src="../../assets/moderninha-x.png"></span>
+                    <span><img id="name-machine" src="../../assets/nome-moderninha-x.png"></span>
+                </div>
+                <div class="ui-grid-col-5">
+                    <h4>Quantidade</h4>
+                    <p-dropdown [options]="modernX" formControlName="modernX" optionLabel="label" [showClear]="false"></p-dropdown>
+                    <div class="ui-grid-col-6">
+                        <label [innerHTML]="'A maquininha será entregue com o chip da operadora com melhor sinal para sua região'"></label>
+                    </div>
+                </div>
+                <div class="ui-grid-col-2">
+                    <label [innerHTML]="priceMachineSMART | currencyCuston : 'R$'"></label>/Mês
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="btn" class="card card-w-title box">
+    <div class="ui-grid">
+        <div class="ui-grid-col-2">
+            <button pButton type="button" label="Continuar" class="raised-btn" [disabled]="isDisabled(form)" (click)="onReceipt(form, 'payment')"></button>
+        </div>
+        <div class="ui-grid-col-2">
+            <button pButton type="button" label="Voltar" class="ui-button-secondary raised-btn" (click)="onReceipt(form, 'buy')"></button>
+        </div>
+    </div>
+</div>

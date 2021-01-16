@@ -1,0 +1,69 @@
+<div class="ui-fluid">
+
+    <div class="card card-w-title box">
+
+        <div class="lm-title-card">
+            <div *ngIf="!showLoad">
+                <h1>Dados do cartão de crédito</h1>
+            </div>
+            <div *ngIf="showLoad">
+                <h1>PROCESSANDO PAGAMENTO</h1>
+            </div>
+        </div>
+
+        <div class="loader-contente" *ngIf="showLoad">
+            <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+        </div>
+
+        <div class="ui-g form-group" *ngIf="!showLoad">
+            <form [formGroup]="form">
+                <div class="ui-g-12">
+                    <div class="ui-g-12">
+                        <label>Nome (Como consta no cartão)*:</label>
+                    </div>
+                    <input type="text" pInputText [ngClass]="{'ui-state-error': form.controls.name.status === 'INVALID' && form.controls.name.touched === true}" formControlName="name" maxlength="26">
+                    <label class="message-error" *ngIf="form.controls.name.status === 'INVALID' && form.controls.name.touched === true" [innerHTML]="'Por favor preencher nome do cartão!'"></label>
+                </div>
+                <div class="ui-g-6">
+                    <div class="ui-g-12">
+                        <label>Número do cartão*:</label>
+                    </div>
+                    <p-inputMask type="text" [ngClass]="{'ui-state-error': form.controls.cardNumber.status === 'INVALID' && form.controls.cardNumber.touched === true}" formControlName="cardNumber" mask="9999 9999 9999 9999" (keyup)="onChooseBrandCardName(form)" maxlength="19"></p-inputMask>
+                    <label class="message-error" *ngIf="form.controls.cardNumber.status === 'INVALID' && form.controls.cardNumber.touched === true" [innerHTML]="'Por favor preencher o número do cartão!'"></label>
+                </div>
+                <div class="ui-g-3">
+                    <div class="ui-g-12">
+                        <label>Data de vencimento*:</label>
+                    </div>
+                    <p-inputMask type="text" [ngClass]="{'ui-state-error': form.controls.date.status === 'INVALID' && form.controls.date.touched === true}" formControlName="date" mask="99/9999"></p-inputMask>
+                    <label class="message-error" *ngIf="form.controls.date.status === 'INVALID' && form.controls.date.touched === true" [innerHTML]="'Por favor preencher data de vencimento!'"></label>
+                </div>
+                <div class="ui-g-3">
+                    <div class="ui-g-12">
+                        <label>CVV/CVC*:</label>
+                    </div>
+                    <input pInputText [ngClass]="{'ui-state-error': form.controls.CVV.status === 'INVALID' && form.controls.CVV.touched === true}" maxlength="4" formControlName="CVV">
+                    <label class="message-error" *ngIf="form.controls.CVV.status === 'INVALID' && form.controls.CVV.touched === true" [innerHTML]="'Por favor preencher o código de segurança do cartão!'"></label>
+                </div>
+                <div class="ui-g-12" *ngIf="brandCardName">
+                    <div class="ui-g-12">
+                        <img class="brand" src="./../../assets/img/{{brandCardName}}.png" alt="brand"><br>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <div id="btn" class="card card-w-title box" *ngIf="!showLoad">
+        <div class="ui-g form-group">
+            <div class="ui-g-8"></div>
+            <div class="ui-g-2">
+                <button pButton type="button" label="Voltar" class="ui-button-secondary raised-btn" (click)="onPrevius(form, 'payment')"></button>
+            </div>
+            <div class="ui-g-2">
+                <button pButton type="button" label="Continuar" class="raised-btn" (click)="onReceipt(form, 'receipt', 'success')" [disabled]="form.invalid"></button>
+            </div>
+        </div>
+    </div>
+</div>

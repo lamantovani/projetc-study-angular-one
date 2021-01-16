@@ -1,0 +1,56 @@
+%u-back-ground-color-title {
+    background-color: #f0f3f5;
+}
+
+.signup-button-wrapper {
+    padding: 40px;
+}
+
+@mixin center() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    @include center();
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+#btn.box {
+    padding: 0;
+    margin-bottom: 60px;
+    background-color: #eaeff2;
+    .ui-g {
+        left: 8px;
+        position: relative;
+    }
+}
+
+.lm-title-card {
+    h1 {
+        font-weight: 0;
+        text-transform: uppercase;
+    }
+    height: 20px;
+    padding: 20px;
+    margin-top: -16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: 10px;
+    @extend %u-back-ground-color-title;
+    border-bottom: 1px solid #e7e9f1;
+}
+
+.form-group {
+    form {
+        margin-bottom: 0px;
+    }
+    .message-error {
+        color: #FF0000;
+    }
+    button {
+        height: 35px;
+    }
+}
